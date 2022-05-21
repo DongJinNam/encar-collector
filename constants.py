@@ -22,6 +22,9 @@ K3_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.M
 NIRO_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.니로.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 SPORTAGE_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.스포티지.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 SORENTO_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.쏘렌토.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
+RAY_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.레이.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record.)"
+MORNING_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.모닝.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record.)"
+
 SM6_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.르노코리아(삼성_)._.ModelGroup.SM6.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.(Or.FuelType.가솔린._.FuelType.LPG(일반인 구입_).)_.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 QM6_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.르노코리아(삼성_)._.ModelGroup.QM6.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.(Or.FuelType.가솔린._.FuelType.LPG(일반인 구입_).)_.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 

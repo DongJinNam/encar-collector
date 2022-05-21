@@ -21,7 +21,7 @@ def test_grandeur_crawler():
     assert len(unused_grandeur_list) > 0
 
     df = pd.DataFrame(unused_grandeur_list)
-    df.to_excel('그랜저(통풍시트)' + str(time.strftime("%y%m%d")) + '.xlsx')
+    df.to_excel('그랜저(통풍시트)_' + str(time.strftime("%y%m%d")) + '.xlsx')
 
 
 def test_sonata_crawler():

@@ -4,25 +4,25 @@ import encar_crawler
 import constants
 import time
 
-# 12만 키로 ~ 15만 키로 선루프, 통풍시트 1인 신조 차량 조회
+# 10만 키로 ~ 15만 키로 선루프, 통풍시트 1인 신조 차량 조회
 def test_long_distaince_crawler():
     car_count = encar_crawler.get_car_count(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
                                             constants.LONG_DISTANCE_SUNROOF_COOLSEAT_FILTER)
     assert car_count > 0
-    print("12만~15만 키로 차량 수(선루프+통풍시트) : " + str(car_count))
+    print("10만~15만 키로 차량 수(선루프+통풍시트) : " + str(car_count))
 
     pages = int(car_count / constants.ENCAR_MAX_LIMIT) + 1
     car_list = encar_crawler.get_car_list(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
                                 constants.LONG_DISTANCE_SUNROOF_COOLSEAT_FILTER,
                                 "ModifiedDate", constants.ENCAR_MAX_LIMIT, pages)
     assert len(car_list) > 0
-    print("12만~15만 키로 차량 수(선루프+통풍시트) : " + str(len(car_list)))
+    print("10만~15만 키로 차량 수(선루프+통풍시트) : " + str(len(car_list)))
 
     unused_car_list = encar_crawler.get_used_car_alone(car_list)
     assert len(unused_car_list) > 0
 
     df = pd.DataFrame(unused_car_list)
-    df.to_excel('12만-15만 용도이력 없음(선루프, 통풍시트)_' + str(time.strftime("%y%m%d")) + '.xlsx')
+    df.to_excel('10만-15만 용도이력 없음(선루프, 통풍시트)_' + str(time.strftime("%y%m%d")) + '.xlsx')
 
 
 # 4만 키로 ~ 6만 키로 선루프, 통풍시트 1인 신조 차량 조회

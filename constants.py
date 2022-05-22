@@ -33,7 +33,7 @@ CHEVROLET_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.Manufacturer.쉐보
 BIGSIZE_COOL_SEAT_FILTER = "(And.Hidden.N._.CarType.Y._.Category.대형차._.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_)._.Mileage.range(0..200000).)"
 
 
-LONG_DISTANCE_SUNROOF_COOLSEAT_FILTER = "(And.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.선루프._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_)._.Mileage.range(120000..150000).)"
+LONG_DISTANCE_SUNROOF_COOLSEAT_FILTER = "(And.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.선루프._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_)._.Mileage.range(100000..150000).)"
 SHORT_DISTANCE_SUNROOF_COOLSEAT_FILTER = "(And.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.선루프._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_)._.Mileage.range(40000..60000).)"
 LPG_COOLSEAT_FILTER = "(And.Mileage.range(0..200000)._.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.FuelType.LPG(일반인 구입_)._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 

@@ -153,20 +153,20 @@ def test_homeservice():
     car_count = encar_crawler.get_car_count(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
                                             constants.HOMESERVICE_COOLSEAT_FILTER)
     assert car_count > 0
-    print("엔카홈서비스(통풍시트+15만미만) : " + str(car_count))
+    print("엔카홈서비스(통풍시트+20만미만) : " + str(car_count))
 
     pages = int(car_count / constants.ENCAR_MAX_LIMIT) + 1
     car_list = encar_crawler.get_car_list(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
                                 constants.HOMESERVICE_COOLSEAT_FILTER,
                                 "ModifiedDate", constants.ENCAR_MAX_LIMIT, pages)
     assert len(car_list) > 0
-    print("엔카홈서비스(통풍시트+15만미만) : " + str(len(car_list)))
+    print("엔카홈서비스(통풍시트+20만미만) : " + str(len(car_list)))
 
     unused_car_list = encar_crawler.get_used_car_alone(car_list)
     assert len(unused_car_list) > 0
 
     df = pd.DataFrame(unused_car_list)
-    df.to_excel('엔카홈서비스(통풍시트+15만미만)_' + str(time.strftime("%y%m%d")) +'.xlsx')
+    df.to_excel('엔카홈서비스(통풍시트+20만미만)_' + str(time.strftime("%y%m%d")) +'.xlsx')
 
 # 수입차
 def test_foreign_homeservice():

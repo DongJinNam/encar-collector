@@ -68,6 +68,8 @@ def get_used_car_alone(car_list):
     # todo car_list 정보를 받아 보험이력을 조회하면서, 용도이력 없고 명의변경 횟수 1회 이내인 차량만 리턴.
     unused_car_list = []
     for car in car_list:
+        if not "Photo" in car.keys():
+            continue
         second_car_id = car["Photo"].split("/")[-1][0:8]
         new_url = constants.INSURANCE_URL + second_car_id
         web_page = requests.get(new_url)

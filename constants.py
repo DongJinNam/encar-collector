@@ -37,8 +37,8 @@ LONG_DISTANCE_SUNROOF_COOLSEAT_FILTER = "(And.Hidden.N._.CarType.Y._.(Or.Categor
 SHORT_DISTANCE_SUNROOF_COOLSEAT_FILTER = "(And.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.선루프._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_)._.Mileage.range(40000..60000).)"
 LPG_COOLSEAT_FILTER = "(And.Mileage.range(0..200000)._.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.FuelType.LPG(일반인 구입_)._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 HYBRID_COOLSEAT_FILTER = "(And.Mileage.range(0..200000)._.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.FuelType.가솔린+전기._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
-HOMESERVICE_COOLSEAT_FILTER = "(And.Mileage.range(0..150000)._.Hidden.N._.CarType.Y._.(Or.Category.중형차._.Category.대형차._.Category.SUV.)_.Trust.HomeService._.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
-FOREIGN_HOMESERVICE_FILTER = "(And.Mileage.range(0..150000)._.Hidden.N._.CarType.N._.Trust.HomeService._.Condition.Inspection._.Condition.Record._.Options.내비게이션.)"
+HOMESERVICE_COOLSEAT_FILTER = "(And.Mileage.range(40000..200000)._.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.Trust.HomeService._.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
+FOREIGN_HOMESERVICE_FILTER = "(And.Mileage.range(40000..200000)._.Hidden.N._.CarType.N._.Trust.HomeService._.Condition.Inspection._.Condition.Record._.Options.내비게이션.)"
 
 # 10만 이상 경차, 준중형
 SMALL_SIZE_FILTER = "(And.Mileage.range(100000..200000)._.Hidden.N._.CarType.Y._.(Or.Category.경차._.Category.준중형차.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record.)"

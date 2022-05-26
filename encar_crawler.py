@@ -64,7 +64,7 @@ def get_car_list(url, filter, sort_key, limit, pages):
     return car_list
 
 
-def get_used_car_alone(car_list):
+def get_used_car_alone(car_list, is_rent = False):
     # todo car_list 정보를 받아 보험이력을 조회하면서, 용도이력 없고 명의변경 횟수 1회 이내인 차량만 리턴.
     unused_car_list = []
     for car in car_list:
@@ -82,10 +82,16 @@ def get_used_car_alone(car_list):
                     features.append(td.text.strip())
             car_history = CarHistory(car["Id"], second_car_id, features[0], features[1],
                                      features[2], features[3], features[4], features[5])
-            # 1인 신조 + 미확정 없는 차량
-            if car_history.car_used == False and car_history.car_num_changed <= 0 and car_history.car_owner_changed <= 1 \
-                    and "미확정" not in car_history.my_car_damage and "미확정" not in car_history.other_car_damage:
-                car["Detail"] = constants.CAR_DETAIL_URL + car["Id"]
-                unused_car_list.append(car)
+            if is_rent is False:
+                # 1인 신조 + 미확정 없는 차량
+                if car_history.car_used == False and car_history.car_num_changed <= 0 and car_history.car_owner_changed <= 1 \
+                        and "미확정" not in car_history.my_car_damage and "미확정" not in car_history.other_car_damage:
+                    car["Detail"] = constants.CAR_DETAIL_URL + car["Id"]
+                    unused_car_list.append(car)
+            else:
+                if car_history.car_used == True and car_history.car_num_changed <= 1 and car_history.car_owner_changed <= 1 \
+                        and "미확정" not in car_history.my_car_damage and "미확정" not in car_history.other_car_damage:
+                    car["Detail"] = constants.CAR_DETAIL_URL + car["Id"]
+                    unused_car_list.append(car)
 
     return unused_car_list

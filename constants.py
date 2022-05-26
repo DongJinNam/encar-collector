@@ -20,6 +20,7 @@ K7_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.M
 K5_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.K5.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.(Or.FuelType.가솔린._.FuelType.LPG(일반인 구입_).)_.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 K3_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.K3.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.(Or.FuelType.가솔린._.FuelType.LPG(일반인 구입_).)_.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 NIRO_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.니로.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
+SELTOS_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.셀토스.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 SPORTAGE_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.스포티지.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 SORENTO_COOL_SEAT_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.쏘렌토.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 RAY_FILTER = "(And.Hidden.N._.(C.CarType.Y._.(C.Manufacturer.기아._.ModelGroup.레이.))_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record.)"
@@ -37,12 +38,15 @@ LONG_DISTANCE_SUNROOF_COOLSEAT_FILTER = "(And.Hidden.N._.CarType.Y._.(Or.Categor
 SHORT_DISTANCE_SUNROOF_COOLSEAT_FILTER = "(And.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.Options.선루프._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_)._.Mileage.range(40000..60000).)"
 LPG_COOLSEAT_FILTER = "(And.Mileage.range(0..200000)._.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.FuelType.LPG(일반인 구입_)._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 HYBRID_COOLSEAT_FILTER = "(And.Mileage.range(0..200000)._.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record._.FuelType.가솔린+전기._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
-HOMESERVICE_COOLSEAT_FILTER = "(And.Mileage.range(40000..200000)._.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.Trust.HomeService._.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
-FOREIGN_HOMESERVICE_FILTER = "(And.Mileage.range(40000..200000)._.Hidden.N._.CarType.N._.Trust.HomeService._.Condition.Inspection._.Condition.Record._.Options.내비게이션.)"
+HOMESERVICE_COOLSEAT_FILTER = "(And.Mileage.range(30000..200000)._.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.Trust.HomeService._.Condition.Inspection._.Condition.Record._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
+FOREIGN_HOMESERVICE_FILTER = "(And.Mileage.range(30000..200000)._.Hidden.N._.CarType.N._.Trust.HomeService._.Condition.Inspection._.Condition.Record._.Options.내비게이션.)"
 
 # 10만 이상 경차, 준중형
 SMALL_SIZE_FILTER = "(And.Mileage.range(100000..200000)._.Hidden.N._.CarType.Y._.(Or.Category.경차._.Category.준중형차.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record.)"
 SMALL_SIZE_LATEST_FILTER = "(And.Mileage.range(40000..60000)._.Hidden.N._.CarType.Y._.(Or.Category.경차._.Category.준중형차.)_.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record.)"
+SMALL_SIZE_ONLY_FILTER = "(And.Mileage.range(0..200000)._.Hidden.N._.CarType.Y._.Category.경차._.(Or.Trust.HomeService._.Trust.Warranty.)_.Condition.Inspection._.Condition.Record.)"
+
+RENT_CAR_SUNROOF_FILTER = "(And.Mileage.range(0..200000)._.Hidden.N._.CarType.Y._.(Or.Category.준중형차._.Category.중형차._.Category.대형차._.Category.SUV.)_.Trust.HomeService._.Condition.Inspection._.Condition.Record._.Options.선루프._.Options.통풍시트(운전석_)._.Options.통풍시트(동승석_).)"
 
 # 변경일자 기준, 0 페이지 20개 조회
 SEARCH_FILTER = "|ModifiedDate|0|20"

@@ -4,44 +4,64 @@ import encar_crawler
 import constants
 import time
 
-def test_grandeur_crawler():
+def test_grandeur_rent_crawler():
     grandeur_count = encar_crawler.get_car_count(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
                                                  constants.GRANDEUR_COOL_SEAT_FILTER)
     assert grandeur_count > 0
-    print("그랜저(통풍시트) : " + str(grandeur_count))
+    print("그랜저(선루프+통풍시트) : " + str(grandeur_count))
 
     pages = int(grandeur_count / constants.ENCAR_MAX_LIMIT) + 1
     grandeur_list = encar_crawler.get_car_list(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
                                 constants.GRANDEUR_COOL_SEAT_FILTER,
                                 "ModifiedDate", constants.ENCAR_MAX_LIMIT, pages)
     assert len(grandeur_list) > 0
-    print("그랜저(통풍시트) : " + str(len(grandeur_list)))
+    print("그랜저(선루프+통풍시트) : " + str(len(grandeur_list)))
+
+    unused_grandeur_list = encar_crawler.get_used_car_alone(grandeur_list, True)
+    assert len(unused_grandeur_list) > 0
+
+    df = pd.DataFrame(unused_grandeur_list)
+    df.to_excel('그랜저(선루프+통풍시트)_렌트_' + str(time.strftime("%y%m%d")) + '.xlsx')
+
+
+def test_grandeur_crawler():
+    grandeur_count = encar_crawler.get_car_count(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
+                                                 constants.GRANDEUR_COOL_SEAT_FILTER)
+    assert grandeur_count > 0
+    print("그랜저(선루프+통풍시트) : " + str(grandeur_count))
+
+    pages = int(grandeur_count / constants.ENCAR_MAX_LIMIT) + 1
+    grandeur_list = encar_crawler.get_car_list(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
+                                constants.GRANDEUR_COOL_SEAT_FILTER,
+                                "ModifiedDate", constants.ENCAR_MAX_LIMIT, pages)
+    assert len(grandeur_list) > 0
+    print("그랜저(선루프+통풍시트) : " + str(len(grandeur_list)))
 
     unused_grandeur_list = encar_crawler.get_used_car_alone(grandeur_list)
     assert len(unused_grandeur_list) > 0
 
     df = pd.DataFrame(unused_grandeur_list)
-    df.to_excel('그랜저(통풍시트)_' + str(time.strftime("%y%m%d")) + '.xlsx')
+    df.to_excel('그랜저(선루프+통풍시트)_' + str(time.strftime("%y%m%d")) + '.xlsx')
 
 
 def test_white_grandeur_crawler():
     grandeur_count = encar_crawler.get_car_count(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
                                                  constants.GRANDEUR_WHITE_COOL_SEAT_FILTER)
     assert grandeur_count > 0
-    print("흰색그랜저(통풍시트) : " + str(grandeur_count))
+    print("흰색그랜저(선루프+통풍시트) : " + str(grandeur_count))
 
     pages = int(grandeur_count / constants.ENCAR_MAX_LIMIT) + 1
     grandeur_list = encar_crawler.get_car_list(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
                                 constants.GRANDEUR_WHITE_COOL_SEAT_FILTER,
                                 "ModifiedDate", constants.ENCAR_MAX_LIMIT, pages)
     assert len(grandeur_list) > 0
-    print("흰색그랜저(통풍시트) : " + str(len(grandeur_list)))
+    print("흰색그랜저(선루프+통풍시트) : " + str(len(grandeur_list)))
 
     unused_grandeur_list = encar_crawler.get_used_car_alone(grandeur_list)
     assert len(unused_grandeur_list) > 0
 
     df = pd.DataFrame(unused_grandeur_list)
-    df.to_excel('흰색그랜저(통풍시트)_' + str(time.strftime("%y%m%d")) + '.xlsx')
+    df.to_excel('흰색그랜저(선루프+통풍시트)_' + str(time.strftime("%y%m%d")) + '.xlsx')
 
 def test_sonata_crawler():
     car_count = encar_crawler.get_car_count(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,

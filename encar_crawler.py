@@ -61,7 +61,10 @@ def get_car_list(url, filter, sort_key, limit, pages):
         print("Error code : ", e)
         exit()
 
-    return car_list
+    # for car in car_list:
+    #     print(car['ServiceCopyCar'] == "ORIGINAL")
+
+    return [car for car in car_list if car['ServiceCopyCar'] == "ORIGINAL"]
 
 
 def get_used_car_alone(car_list, is_rent = False):
@@ -82,6 +85,9 @@ def get_used_car_alone(car_list, is_rent = False):
                     features.append(td.text.strip())
             car_history = CarHistory(car["Id"], second_car_id, features[0], features[1],
                                      features[2], features[3], features[4], features[5])
+            cdate = soup.find("dl", "cdate").find_all("dd")[0].text.strip()
+            # 보험이력 조회 일자 추가(딜러가 언제 매입했는지 파악 용도)
+            car["insuranceCheckedAt"] = cdate
             if is_rent is False:
                 # 1인 신조 + 미확정 없는 차량
                 if car_history.car_used == False and car_history.car_num_changed <= 0 and car_history.car_owner_changed <= 1 \
@@ -94,4 +100,32 @@ def get_used_car_alone(car_list, is_rent = False):
                     car["Detail"] = constants.CAR_DETAIL_URL + car["Id"]
                     unused_car_list.append(car)
 
+    unused_car_list = [remove_unused_field(car) for car in unused_car_list]
     return unused_car_list
+
+
+def remove_unused_field(car):
+    if hasattr(car, "Hotmark"):
+        delattr(car, "Hotmark")
+    if hasattr(car, "AdWords"):
+        delattr(car, "AdWords")
+    if hasattr(car, "Lease"):
+        delattr(car, "Lease")
+    if hasattr(car, "LeaseType"):
+        delattr(car, "LeaseType")
+    if hasattr(car, "MonthLeasePrice"):
+        delattr(car, "MonthLeasePrice")
+    if hasattr(car, "Deposit"):
+        delattr(car, "Deposit")
+    if hasattr(car, "ResidualValue"):
+        delattr(car, "ResidualValue")
+    if hasattr(car, "Powerpack"):
+        delattr(car, "Powerpack")
+    if hasattr(car, "SalesStatus"):
+        delattr(car, "SalesStatus")
+    if hasattr(car, "HomeServiceProgress"):
+        delattr(car, "HomeServiceProgress")
+    if hasattr(car, "HomeServiceVerification"):
+        delattr(car, "HomeServiceVerification")
+    return car
+

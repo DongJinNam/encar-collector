@@ -6,7 +6,7 @@ import time
 
 def test_korando_crawler():
     car_count = encar_crawler.get_car_count(constants.API_ENCAR_URL + constants.SEARCH_CAR_LIST_URL_PREMIUM,
-                                                 constants.SM6_COOL_SEAT_FILTER)
+                                                 constants.KORANDO_COOL_SEAT_FILTER)
     assert car_count > 0
     print("코란도(통풍시트) : " + str(car_count))
 
